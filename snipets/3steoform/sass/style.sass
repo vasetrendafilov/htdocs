@@ -1,0 +1,219 @@
+html
+  background: #16a085
+  min-height: 100%
+  font-family: 'Roboto', sans-serif
+  overflow: hidden
+  perspective: 1000px  
+
+.title
+  text-transform: uppercase
+  text-align: center
+  margin-bottom: 30px
+  color: #8e44ad
+  font-weight: 300
+  font-size: 24px
+  letter-spacing: 1px
+  
+.description
+  text-align: center
+  color: #666
+  margin-bottom: 30px
+
+input[type="text"],
+input[type="email"]
+  padding: 10px 20px
+  border: 1px solid #999
+  border-radius: 3px
+  display: block
+  width: 100%
+  margin-bottom: 20px
+  box-sizing: border-box
+  outline: none
+  
+  &:focus
+    border-color: #8e44ad
+  
+input[type="radio"]
+  margin-right: 10px
+
+label
+  margin-bottom: 20px
+  display: block
+  font-size: 18px
+  color: #666
+  border-top: 1px solid #ddd
+  border-bottom: 1px solid #ddd
+  padding: 20px 0
+  cursor: pointer
+  
+  &:first-child
+    margin-bottom: 0
+    border-bottom: none
+  
+  
+.button,
+.rerun-button
+  padding: 10px 20px
+  border-radius: 3px
+  background: #8e44ad
+  color: white
+  text-transform: uppercase
+  letter-spacing: 1px
+  display: inline-block
+  cursor: pointer
+  
+  &:hover
+    background: darken(#8e44ad, 5%)
+  
+  &.rerun-button
+    border: 1px solid rgba(255,255,255,0.6)
+    margin-bottom: 50px
+    box-shadow: 0px 10px 15px -6px rgba(0,0,0,0.2)
+    display: none
+  
+.text-center
+  text-align: center
+  
+.modal-wrap
+  max-width: 600px
+  margin: 50px auto
+  transition: transform 500ms cubic-bezier(0.97,-0.46, 0.56, 1.75)
+  transform-origin: top 
+  transform: rotateX(0deg) scale(1)
+  
+
+.modal-header
+  height: 45px
+  background: white
+  border-bottom: 1px solid #ccc
+  display: flex
+  justify-content: center
+  align-items: center
+  overflow: hidden
+  position: relative
+  border-radius: 5px 5px 0 0
+  
+  span
+    display: block
+    height: 12px
+    width: 12px
+    margin: 5px
+    border-radius: 50%
+    background: rgba(0,0,0,0.2)
+    
+    &.is-active
+      background: rgba(0,0,0,0.4)
+      background: #8e44ad
+
+.modal-bodies
+  position: relative
+  perspective: 1000px
+  
+.modal-body
+  background: white
+  padding: 40px 100px
+  box-shadow: 0px 50px 30px -30px rgba(0,0,0,0.3)
+  margin-bottom: 50px
+  position: absolute
+  top: 0
+  display: none
+  box-sizing: border-box
+  width: 100%
+  transform-origin: top 
+  overflow: hidden
+  border-radius: 0 0 5px 5px
+  
+  &.is-showing
+    display: block
+    
+.hcolor
+  background: #8e44ad
+  border: none
+  width: 45px
+  height: 45px
+  margin: 0 50%
+  transform: translate(-50%)
+  animation: goOut 200ms ease-in-out forwards
+  
+  span
+    background: #8e44ad
+    
+@keyframes goOut
+  
+  0%
+    opacity: 1
+    width: 100%
+  
+  100%
+    opacity: 0
+    width: 45px
+    
+.animate-out
+  animation: out 600ms ease-in-out forwards
+  padding: 0
+  opacity: 1
+  border-radius: 50%
+  margin: 0px 50%
+  background: #8e44ad
+  .title, .description, .text-center, form
+    display: none
+
+.animate-in
+  animation: in 500ms ease-in-out forwards
+  display: block
+  
+.animate-up
+  transform: rotateX(70deg) scale(0.0)
+  
+.pulse
+  &:after
+    content: ''
+    animation: pulse 500ms ease-in-out 
+    width: 12px
+    height: 12px
+    border-radius: 50%
+    position: absolute
+    opacity: 0  
+    box-shadow: 0 0 1px 3px #8e44ad, 0 0 0 6px #fff, 0 0 3px 9px #8e44ad, 0 0 0 12px #fff, 0 0 5px 15px #8e44ad
+    
+@keyframes out
+  0%
+    width: 100%
+    height: 500px
+    transform: translate(-50%, 0px)
+  
+  30%
+    width: 200px
+    height: 200px
+    transform: translate(90%, 0px)
+  
+  60%
+    width: 100px
+    height: 100px
+    transform: translate(-200%, 0px)
+  
+  100%
+    opacity: 0
+    width: 12px
+    height: 12px
+    transform: translate(-50%, -30px)    
+  
+@keyframes in
+  0%
+    opacity: 0
+    transform: rotateX(-90deg)
+  100%
+    opacity: 1
+    transform: rotateX(0deg)
+    
+@keyframes pulse
+  0%
+    opacity: 1
+    width: 12px
+    height: 12px
+  
+  100%
+    opacity: 0
+    width: 500px
+    height: 500px
+  

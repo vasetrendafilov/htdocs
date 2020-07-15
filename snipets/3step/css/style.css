@@ -1,0 +1,43 @@
+#main {
+  padding-top: 48px; }
+
+.card-columns {
+  padding-top: 80px; }
+
+.toolbox {
+  background: orangered;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px 5px 5px 5px; }
+
+.search {
+  margin-left: 70%; }
+
+.popup {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: none; }
+
+.popup-content {
+  width: 500px;
+  height: 300px;
+  background: white;
+  border-radius: 4px;
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  text-align: center;
+  padding-top: 100px; }
+
+.popup-content > h1 {
+  padding-bottom: 40px; }
+
+.popup-content > button {
+  margin-right: 20px;
+  padding: 12px 20px 12px 20px;
+  background-color: red; }
